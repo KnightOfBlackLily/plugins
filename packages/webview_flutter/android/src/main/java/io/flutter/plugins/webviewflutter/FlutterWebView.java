@@ -91,6 +91,10 @@ public class FlutterWebView implements PlatformView, MethodCallHandler {
     displayListenerProxy.onPostWebViewInitialization(displayManager);
 
     platformThreadHandler = new Handler(context.getMainLooper());
+    
+    webView.setBackgroundColor(Color.WHITE);
+    webView.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
+    
     // Allow local storage.
     webView.getSettings().setDomStorageEnabled(true);
     webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
